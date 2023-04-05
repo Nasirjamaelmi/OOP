@@ -28,21 +28,28 @@ void Korthand::stoppaInKort(const Kort &kort)
 
 int Korthand::poang() const
 {
-   int sum = 0;
-   for(int i=0; i< m_korten.size(); i++)
-   {
-       if(m_korten[i].valor() == 1 && sum > 7)
-       {
-            sum += 1;
-       }
-       if(m_korten[i].valor() == 1 && sum <= 7)
-       {
-           sum += 14;
-       }
-       else if(m_korten[i].valor() != 1)
-       {
-           sum += m_korten[i].valor();
-       }
-   }
-       return sum;
+
+    int sum = 0;
+    int temp = 0;
+
+    for(int i=0; i < m_korten.size(); i++)
+    {
+        if(sum + m_korten[i].valor() > 22)
+        {
+            break;
+        }
+        else if(m_korten[i].valor() == 1)
+        {
+
+            std::cout<<"One or fourteen"<<std::endl;
+            std::cin >> temp;
+            sum += temp;
+        }
+        else{
+             sum+=m_korten[i].valor();
+        }
+    }
+
+  return sum;
+
 }
