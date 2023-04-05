@@ -27,7 +27,7 @@ int main()
 
   int sum = b.poang();
   cout<<sum<<endl;
-
+   //Hampe
 
 }
 
