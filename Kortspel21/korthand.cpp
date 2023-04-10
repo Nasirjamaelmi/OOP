@@ -43,6 +43,8 @@ int Korthand::poang() const
 
             std::cout<<"One or fourteen"<<std::endl;
             std::cin >> temp;
+            if(sum + temp > 21)
+                break;
             sum += temp;
         }
         else{
