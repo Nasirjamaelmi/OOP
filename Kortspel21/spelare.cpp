@@ -8,10 +8,10 @@ Spelare::Spelare()
 
 bool Spelare::villSpela()
 {
-    int res;
-    std::cout<<"Want to play: press one to play and zero for no"<<std::endl;
-    std::cin >> res;
-    if(res == 1)
+    std::string want{};
+    std::cout<<"vill du spela, ja eller nej"<<std::endl;
+    std::cin >> want;
+    if(want == "Ja" || "ja")
         return true;
     else return false;
 
@@ -20,9 +20,9 @@ bool Spelare::villSpela()
 bool Spelare::villHaKort()
 {
     std::string Card{};
-    std::cout<<"Want another card ?"<<std::endl;
+    std::cout<<"vill du ha ett kort ?"<<std::endl;
     std::cin >> Card;
-    if(Card == "Yes" || Card == "yes")
+    if(Card == "Ja" || Card == "ja")
         return true;
     else
         return false;
@@ -31,27 +31,27 @@ bool Spelare::villHaKort()
 void Spelare::tagEmotKort(const Kort &kort)
 {
     m_hand.stoppaInKort(kort);
-    std::cout<<"Player recived"<<kort.farg()<<" "<<kort.valor()<<std::endl;
+    std::cout<<"Spelare fick "<<kort.text()<<std::endl;
 }
 
 void Spelare::bankenTagKort(const Kort &Kort) const
 {
-    std::cout<<"The bank gave you"<<Kort.farg()<<" "<<Kort.valor()<<std::endl;
+    std::cout<<"Bankir gav "<<Kort.text()<<std::endl;
 }
 
 void Spelare::kortlekenHarBlandats()
 {
-    std::cout<<"The Cards are being shuffled"<<std::endl;
+    std::cout<<"Kortlekten blandas"<<std::endl;
 }
 
 void Spelare::speletAvslutat(bool spelareVann)
 {
-    std::cout<<"The winner is:"<<spelareVann<<std::endl;
+    std::cout<<"Vinnaren är :"<<spelareVann<<std::endl;
 
 }
 const Korthand &Spelare::korthand()
 {
-
+    return m_hand;
 }
 
 

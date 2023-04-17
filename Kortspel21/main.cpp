@@ -2,6 +2,8 @@
 #include "korthand.h"
 #include "kortlek.h"
 #include "kort.h"
+#include "bankir.h"
+#include "spelare.h"
 using namespace std;
 
 int main()
@@ -15,7 +17,7 @@ int main()
       cout<<k.text()<<endl;
   }
   */
-  Kort k1{Kort::ruter,1};
+  /*Kort k1{Kort::ruter,1};
   Kort k2{Kort::ruter,4};
   Kort k3{Kort::ruter,6};
 
@@ -26,7 +28,16 @@ int main()
   b.stoppaInKort(k3);
 
   int sum = b.poang();
-  cout<<sum<<endl;
+  cout<<sum<<endl;*/
+
+    cout<< "Kortspelet 21!" <<endl;
+    Bankir bank;
+    Spelare spelare;
+    bank.registreraSpelare(&spelare);
+
+    while (bank.harRegistreradeSpelare())
+        bank.spelaEnOmgang();
+    return 0;
 
 
 }

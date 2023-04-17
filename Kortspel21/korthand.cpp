@@ -41,7 +41,7 @@ int Korthand::poang() const
         else if(m_korten[i].valor() == 1)
         {
 
-            std::cout<<"One or fourteen"<<std::endl;
+            std::cout<<"ett or fjourton"<<std::endl;
             std::cin >> temp;
             if(sum + temp > 21)
                 break;

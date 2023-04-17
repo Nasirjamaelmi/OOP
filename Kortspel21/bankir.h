@@ -2,10 +2,18 @@
 #define BANKIR_H
 
 
+#include "kortlek.h"
+#include "spelare.h"
 class Bankir
 {
 public:
     Bankir();
+    void registreraSpelare(Spelare *pSpelare);
+    bool harRegistreradeSpelare() const;
+    void spelaEnOmgang();
+ private:
+    Kortlek m_kortlek;
+    Spelare *m_pSpelare;
 };
 
 #endif // BANKIR_H
