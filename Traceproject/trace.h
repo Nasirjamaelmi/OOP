@@ -5,9 +5,6 @@
 #define traceMsg( meddelande ) traceObject.message( meddelande );
 #include <string>
 
-
-
-
 class Trace
 {
 

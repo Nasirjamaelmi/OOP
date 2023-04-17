@@ -31,8 +31,10 @@ void funcA()
 
 }
 
+
 int main()
 {
     traceme(__func__);
     funcA();
+
 }
