@@ -1,8 +1,7 @@
-#include <iostream>
-#include <QDebug>
-#include "trace.h"
-
+#include <nastrace.h>
 using namespace std;
+
+
 
 int fakultet(int n)
 {
