@@ -15,7 +15,7 @@ public:
     const Mystring& operator=(Mystring&& stringToMove);
     const Mystring& operator+=(const Mystring& otherString);
 
-    bool operator==(const Mystring& otherString);
+    bool operator==(const Mystring& otherString) const;
     char& operator[](int ix);
     char  operator[](int ix) const;
 

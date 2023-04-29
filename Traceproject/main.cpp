@@ -1,6 +1,6 @@
 #include <nastrace.h>
 using namespace std;
-
+USING_COUT_TRACE;
 
 
 int fakultet(int n)

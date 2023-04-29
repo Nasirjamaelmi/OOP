@@ -1,8 +1,7 @@
 TEMPLATE = app
 CONFIG += console c++17
 CONFIG -= app_bundle
-CONFIG -= qt
-
+INCLUDEPATH += "C:\Users\nasir\OneDrive\Dokument\GitHub\The-fallen-one\Traceproject\CPPINCLUDES"
 SOURCES += \
         main.cpp \
         mystring.cpp
