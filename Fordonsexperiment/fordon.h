@@ -5,14 +5,17 @@
 class Fordon
 {
 public:
-    Fordon();
-    virtual void pakallaUppmarksamhet();
-    virtual void indikeraKommandeSvang();
-    virtual void svangvanster();
-    virtual void svangHoger();
-    virtual void korFrammat(float antalKm);
+    Fordon(int antalhjul);
+    virtual void pakallaUppmarksamhet() = 0;
+    virtual void indikeraKommandeSvang() = 0;
+    virtual void svangvanster() = 0;
+    virtual void svangHoger() = 0;
+    virtual void korFrammat(float antalKm) = 0;
+    virtual void SkrivUtInfo();
+    friend int getprivateint(const Fordon& obj);
 
-
+protected:
+    int m_antalhjul;
 };
 
 #endif // FORDON_H

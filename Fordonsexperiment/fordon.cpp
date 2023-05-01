@@ -1,32 +1,17 @@
 #include "fordon.h"
 #include <iostream>
 
-Fordon::Fordon()
+Fordon::Fordon(int antalhjul)
 {
-
+    m_antalhjul = antalhjul;
 }
 
-void Fordon::pakallaUppmarksamhet()
+void Fordon::SkrivUtInfo()
 {
-    std::cout <<"Fordon har ingen vettig implementering för" <<__func__<<std::endl;
+    std::cout << "Ett fordon med " << m_antalhjul << " hjul." << std::endl;
+}
+int getprivateint(const Fordon& obj)
+{
+  return obj.m_antalhjul;
 }
 
-void Fordon::indikeraKommandeSvang()
-{
-
-}
-
-void Fordon::svangvanster()
-{
-
-}
-
-void Fordon::svangHoger()
-{
-
-}
-
-void Fordon::korFrammat(float antalKm)
-{
-
-}
