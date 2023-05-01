@@ -19,7 +19,7 @@ Mystring::Mystring()
 
 Mystring::Mystring(const char *cstr)
 {
-    tracemex("typkonv");
+    tracemex("typomvandling");
     int size = 0;
     if (cstr == nullptr)
     {
