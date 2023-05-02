@@ -4,6 +4,7 @@
 #include "kort.h"
 #include "bankir.h"
 #include "spelare.h"
+#include "abstraktspelare.h"
 using namespace std;
 
 void skrevheltal()
@@ -12,8 +13,10 @@ void skrevheltal()
     staticvariabel +=11;
     cout<<staticvariabel<<endl;
 }
+
 int main()
 {
+
   /*Kortlek lek;
   lek.aterstallKortlek();
   lek.blanda();
@@ -22,8 +25,8 @@ int main()
       Kort k = lek.utplockatKort();
       cout<<k.text()<<endl;
   }
-  */
-  /*Kort k1{Kort::ruter,1};
+
+  Kort k1{Kort::ruter,1};
   Kort k2{Kort::ruter,4};
   Kort k3{Kort::ruter,6};
 
@@ -34,9 +37,9 @@ int main()
   b.stoppaInKort(k3);
 
   int sum = b.poang();
-  cout<<sum<<endl;*/
-
-    /*cout<< "Kortspelet 21!" <<endl;
+  cout<<sum<<endl;
+*/
+    cout<< "Kortspelet 21!" <<endl;
     Bankir bank;
     Spelare spelare;
     bank.registreraSpelare(&spelare);
@@ -44,7 +47,7 @@ int main()
     while (bank.harRegistreradeSpelare())
         bank.spelaEnOmgang();
     return 0;
-    */
+
     skrevheltal();
     skrevheltal();
 

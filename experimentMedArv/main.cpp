@@ -66,8 +66,8 @@ void provaDownCasting(Bas *pBas)
 void experimentMedDynamicDownCasting()
 {
     cout <<"experiment med dynamic down casting" <<endl;
-    Bas *pX = new Bas;
-    Bas *pY = new Sub;
+    Bas *pX = new Bas; // allokerar minne för en bas
+    Bas *pY = new Sub; // allokerar minne för sub gör att vi kan tilldela all information correct
 
     provaDownCasting( pX );
     provaDownCasting( pY );

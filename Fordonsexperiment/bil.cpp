@@ -34,5 +34,5 @@ void Bil::SkrivUtInfo()
 {
     std::cout << "Fordonet är en Bil."<<std::endl;
     Fordon::SkrivUtInfo();
-    Fordon::
+
 }

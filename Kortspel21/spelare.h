@@ -1,19 +1,19 @@
 #ifndef SPELARE_H
 #define SPELARE_H
 
-
+#include "abstraktspelare.h"
 #include "kort.h"
 #include "korthand.h"
-class Spelare
+class Spelare : public AbstraktSpelare
 {
 public:
     Spelare();
-    bool villSpela();
-    bool villHaKort();
-    void tagEmotKort(const Kort &kort);
-    void bankenTagKort(const Kort &Kort) const;
-    void kortlekenHarBlandats();
-    void speletAvslutat(bool spelareVann);
+    bool villSpela() override;
+    bool villHaKort() override;
+    void tagEmotKort(const Kort &kort) override;
+    void bankenTagKort(const Kort &Kort) const override;
+    void kortlekenHarBlandats() override;
+    void speletAvslutat(bool spelareVann) override;
 
     const Korthand& korthand();
 

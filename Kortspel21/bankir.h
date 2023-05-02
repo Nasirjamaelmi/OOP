@@ -1,19 +1,18 @@
 #ifndef BANKIR_H
 #define BANKIR_H
 
-
+#include "abstraktspelare.h"
 #include "kortlek.h"
-#include "spelare.h"
 class Bankir
 {
 public:
     Bankir();
-    void registreraSpelare(Spelare *pSpelare);
+    void registreraSpelare(AbstraktSpelare *pSpelare);
     bool harRegistreradeSpelare() const;
     void spelaEnOmgang();
  private:
     Kortlek m_kortlek;
-    Spelare *m_pSpelare;
+    AbstraktSpelare *m_pSpelare;
 };
 
 #endif // BANKIR_H

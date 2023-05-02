@@ -79,7 +79,7 @@ const Mystring &Mystring::operator=(const Mystring &otherString)
 
 const Mystring &Mystring::operator=(Mystring&& stringToMove)
 {
-    tracemex("move-tilldelning")    ;
+    tracemex("move-tilldelning");
     delete [] m_cstr;
     m_size = stringToMove.m_size;
     m_cstr = new char[m_size+1];
