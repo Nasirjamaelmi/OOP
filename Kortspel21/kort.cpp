@@ -13,9 +13,8 @@ Kort::Farg Kort::farg() const
 
 int Kort::valor() const
 {
-    int set = 10;
-    if (m_valor == 12  || 13 || 14)
-        return set;
+        if (m_valor == 11 || m_valor==12 || m_valor==13)
+            return 10;
     else
     return m_valor;
 }

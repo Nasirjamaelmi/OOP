@@ -17,39 +17,49 @@ void skrevheltal()
 int main()
 {
 
-  /*Kortlek lek;
-  lek.aterstallKortlek();
-  lek.blanda();
-  while(lek.antalKort() > 0)
-  {
-      Kort k = lek.utplockatKort();
-      cout<<k.text()<<endl;
-  }
+/*
+  Kort k1{Kort::ruter,4};
+  Kort k2{Kort::ruter,3};
+  Kort k3{Kort::ruter,3};
+  Kort k4{Kort::ruter,2};
+  Kort k5{Kort::ruter,3};
 
-  Kort k1{Kort::ruter,1};
-  Kort k2{Kort::ruter,4};
-  Kort k3{Kort::ruter,6};
+
 
   Korthand b = Korthand();
+
 
   b.stoppaInKort(k1);
   b.stoppaInKort(k2);
   b.stoppaInKort(k3);
+  b.stoppaInKort(k4);
+  b.stoppaInKort(k5);
+
+
 
   int sum = b.poang();
   cout<<sum<<endl;
 */
-    cout<< "Kortspelet 21!" <<endl;
+   cout<< "Kortspelet 21!" <<endl;
     Bankir bank;
     Spelare spelare;
+    int bet = 0;
     bank.registreraSpelare(&spelare);
 
-    while (bank.harRegistreradeSpelare())
-        bank.spelaEnOmgang();
+    while (bank.harRegistreradeSpelare() && spelare.money > 0)
+    {
+        cout<<"How much you wanna bet ?       Money:"<<spelare.money<<endl;
+        cin >>bet;
+        if(bet > spelare.money)
+            cin >> bet;
+        while(spelare.money > 1
+            spelare.money = spelare.money - bet;
+            bank.spelaEnOmgang();
+        }
+    }
+
     return 0;
 
-    skrevheltal();
-    skrevheltal();
 
 }
 

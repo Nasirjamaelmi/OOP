@@ -14,6 +14,7 @@ void Korthand::rensa()
 int Korthand::antalkort() const
 {
     return m_korten.size();
+
 }
 
 Kort Korthand::kort(int nr) const
@@ -28,30 +29,29 @@ void Korthand::stoppaInKort(const Kort &kort)
 
 int Korthand::poang() const
 {
-
     int sum = 0;
-    int temp = 0;
+    int check = 0;
 
-    for(int i=0; i < m_korten.size(); i++)
+
+    for(int i=0; i < antalkort(); i++)
     {
-        if(sum + m_korten[i].valor() > 22)
-        {
-            break;
-        }
-        else if(m_korten[i].valor() == 1)
-        {
 
-            std::cout<<"ett or fjourton"<<std::endl;
-            std::cin >> temp;
-            if(sum + temp > 21)
-                break;
-            sum += temp;
+        if (m_korten[i].valor() == 1)
+        {
+            check++;
+            sum += 14;
+
         }
-        else{
-             sum+=m_korten[i].valor();
-        }
+        else
+        sum += m_korten[i].valor();
     }
-
-  return sum;
+    while(sum > 21 && check !=0)
+    {
+        sum -= 13;
+        check--;
+    }
+    if(antalkort() == 5 && sum < 21)
+        return 21;
+    return sum;
 
 }

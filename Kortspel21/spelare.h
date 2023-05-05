@@ -8,6 +8,7 @@ class Spelare : public AbstraktSpelare
 {
 public:
     Spelare();
+    int money = 100;
     bool villSpela() override;
     bool villHaKort() override;
     void tagEmotKort(const Kort &kort) override;
@@ -15,10 +16,11 @@ public:
     void kortlekenHarBlandats() override;
     void speletAvslutat(bool spelareVann) override;
 
-    const Korthand& korthand();
+    const Korthand& korthand() override;
 
 private:
     Korthand m_hand;
+
 };
 
 #endif // SPELARE_H

@@ -40,10 +40,10 @@ Mystring versalstrang(const Mystring &str)
 void stringQuizz()
 {
     traceme
-    Mystring str = "hello";
-    cout <<str<< endl;
-    str = "Hej";
-    cout << str <<endl;
+    Mystring s1("Hello");
+    Mystring s2("hej");
+    s1 += s2;
+
 }
 
 
@@ -70,6 +70,7 @@ void testaStrang()
     assert( arVersaler(str4) );
     cout << "testaStrang lyckades" << endl;
 }
+
 
 int main()
 {
