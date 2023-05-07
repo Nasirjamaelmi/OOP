@@ -21,6 +21,7 @@ public:
 private:
     Korthand m_hand;
 
+
 };
 
 #endif // SPELARE_H

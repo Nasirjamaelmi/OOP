@@ -11,7 +11,8 @@ SOURCES += \
         kortlek.cpp \
         main.cpp \
         minafunktioner.cpp \
-        spelare.cpp
+        spelare.cpp \
+        spelarebot.cpp
 
 HEADERS += \
     abstraktspelare.h \
@@ -20,4 +21,5 @@ HEADERS += \
     korthand.h \
     kortlek.h \
     minafunktioner.h \
-    spelare.h
+    spelare.h \
+    spelarebot.h

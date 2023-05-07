@@ -32,6 +32,7 @@ void Bankir::spelaEnOmgang()
 
     if((*m_pSpelare).villSpela())
     {
+
         Kort k = m_kortlek.utplockatKort();
         (*m_pSpelare).tagEmotKort(k);
 

@@ -40,27 +40,34 @@ int main()
   int sum = b.poang();
   cout<<sum<<endl;
 */
+
+
    cout<< "Kortspelet 21!" <<endl;
     Bankir bank;
     Spelare spelare;
     int bet = 0;
     bank.registreraSpelare(&spelare);
 
+
     while (bank.harRegistreradeSpelare() && spelare.money > 0)
     {
-        cout<<"How much you wanna bet ?       Money:"<<spelare.money<<endl;
-        cin >>bet;
-        if(bet > spelare.money)
-            cin >> bet;
-        while(spelare.money > 1
-            spelare.money = spelare.money - bet;
-            bank.spelaEnOmgang();
+        cout<<"How much you wanna bet from 1 to your maxmoney?       Money:"<<spelare.money<<endl;
+        cin >> bet;
+        while(cin.fail())
+        {
+            cout<<"Bet sum wrong"<<endl;
+            return 0;
         }
+
+        bank.spelaEnOmgang();
+        spelare.money = spelare.money - bet;
     }
-
-    return 0;
-
-
+        return 0;
 }
+
+
+
+
+
 
 
