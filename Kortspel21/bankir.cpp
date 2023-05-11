@@ -1,4 +1,5 @@
 #include "bankir.h"
+using namespace  std;
 
 Bankir::Bankir()
 {
@@ -32,9 +33,24 @@ void Bankir::spelaEnOmgang()
 
     if((*m_pSpelare).villSpela())
     {
+        string question {};
+        int bet =0;
+        cout<<"How much you wanna bet from 1 to your maxmoney?       Money:"<<m_pSpelare->money()<<endl;
+        cin >> bet;
+        while(cin.fail() || bet > m_pSpelare->money())
+        {
+            cout<<"Bet sum wrong, write again under maxmoney"<<endl;
+            cin >> bet;
 
+        }
         Kort k = m_kortlek.utplockatKort();
         (*m_pSpelare).tagEmotKort(k);
+        cout<<"Do you wanna double, Yes or No"<<endl;
+        cin >> question;
+        if(question == "Yes")
+        {
+            bet += bet;
+        }
 
         while ((*m_pSpelare).korthand().poang()<21 && (*m_pSpelare).villHaKort())
         {
@@ -44,9 +60,30 @@ void Bankir::spelaEnOmgang()
 
         const int spelarpoang = (*m_pSpelare).korthand().poang();
         if(spelarpoang > 21)
+        {
             (*m_pSpelare).speletAvslutat(false);
+            (*m_pSpelare).forlust(bet);
+
+
+            if(m_pSpelare->money() == 0)
+            {
+
+                m_pSpelare = nullptr;
+            }
+        }
         else if (spelarpoang == 21)
+        {
             (*m_pSpelare).speletAvslutat(true);
+            (*m_pSpelare).vinst(bet);
+        }
+
+        // spelarenskorthand ska ha 5 kort och poängen ska understiga 21;
+        else if (spelarpoang < 21 && m_pSpelare->korthand().antalkort() == 5)
+        {
+            (*m_pSpelare).speletAvslutat(true);
+            (*m_pSpelare).vinst(bet);
+
+        }
         else
         {
           Korthand bankhand;
@@ -59,6 +96,7 @@ void Bankir::spelaEnOmgang()
           int bankpoang = bankhand.poang();
           bool spelareVann = bankpoang > 21 || spelarpoang > bankpoang;
           (*m_pSpelare).speletAvslutat(spelareVann);
+
         }
     }
     else m_pSpelare = nullptr;

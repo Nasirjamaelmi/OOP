@@ -12,10 +12,12 @@ public:
     virtual void bankenTagKort(const Kort &Kort) const = 0;
     virtual void kortlekenHarBlandats() = 0;
     virtual void speletAvslutat(bool spelareVann) = 0;
-
+    virtual void vinst(int summa) = 0;
+    virtual void forlust(int summa) = 0;
     virtual const Korthand& korthand() = 0;
+    virtual int money() = 0;
 
-private:
+protected:
     Korthand m_hand;
 };
 

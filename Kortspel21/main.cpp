@@ -16,7 +16,6 @@ void skrevheltal()
 
 int main()
 {
-
 /*
   Kort k1{Kort::ruter,4};
   Kort k2{Kort::ruter,3};
@@ -34,33 +33,18 @@ int main()
   b.stoppaInKort(k3);
   b.stoppaInKort(k4);
   b.stoppaInKort(k5);
-
-
-
   int sum = b.poang();
   cout<<sum<<endl;
 */
-
-
    cout<< "Kortspelet 21!" <<endl;
     Bankir bank;
     Spelare spelare;
-    int bet = 0;
     bank.registreraSpelare(&spelare);
 
 
-    while (bank.harRegistreradeSpelare() && spelare.money > 0)
+    while (bank.harRegistreradeSpelare())
     {
-        cout<<"How much you wanna bet from 1 to your maxmoney?       Money:"<<spelare.money<<endl;
-        cin >> bet;
-        while(cin.fail())
-        {
-            cout<<"Bet sum wrong"<<endl;
-            return 0;
-        }
-
         bank.spelaEnOmgang();
-        spelare.money = spelare.money - bet;
     }
         return 0;
 }

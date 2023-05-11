@@ -52,7 +52,7 @@ void Grafikyta::ritaAnsikte(QPainter &painter, QRect rektangle)
 
     painter.drawEllipse(rektangle);
 
-    int yEyeCenter = rektangle.center().y() -100;
+    int yEyeCenter = rektangle.center().y();
     int xEyeCenter = rektangle.center().x();
     int xLeftEyeCenter = rektangle.width() * 0.3;
     int xRightEyeCenter = rektangle.width() * 0.7;
@@ -63,15 +63,15 @@ void Grafikyta::ritaAnsikte(QPainter &painter, QRect rektangle)
 
 
     painter.setBrush(Qt::red);
-    painter.drawEllipse(250,350,300,100);
+    painter.drawEllipse(xEyeCenter * 0.77, yEyeCenter * 1.33,eyewidthandheight * 3,eyewidthandheight);
 
     painter.setBrush(Qt::white);
-    painter.drawEllipse(xLeftEyeCenter,yEyeCenter,eyewidthandheight,eyewidthandheight);
-    painter.drawEllipse(xRightEyeCenter,yEyeCenter,eyewidthandheight,eyewidthandheight);
+    painter.drawEllipse(xLeftEyeCenter,yEyeCenter * 0.5,eyewidthandheight,eyewidthandheight);
+    painter.drawEllipse(xRightEyeCenter,yEyeCenter * 0.5,eyewidthandheight,eyewidthandheight);
 
     painter.setBrush(Qt::black);
-    painter.drawEllipse(xLeftEyeCenter+20,yEyeCenter+20,smalleyes,smalleyes);
-    painter.drawEllipse(xRightEyeCenter+20,yEyeCenter+20,smalleyes,smalleyes);
+    painter.drawEllipse(xLeftEyeCenter + eyewidthandheight * 0.25, yEyeCenter * 0.5 + eyewidthandheight * 0.33, smalleyes, smalleyes);
+    painter.drawEllipse(xRightEyeCenter + eyewidthandheight * 0.25,yEyeCenter * 0.5 + eyewidthandheight * 0.33,  smalleyes, smalleyes);
 
 
 

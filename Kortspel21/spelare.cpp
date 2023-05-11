@@ -49,9 +49,29 @@ void Spelare::speletAvslutat(bool spelareVann)
     std::cout<<"Vinnaren är :"<<spelareVann<<std::endl;
 
 }
+
+void Spelare::vinst(int summa)
+{
+
+    m_Money += summa * 2;
+
+}
+void Spelare::forlust(int summa)
+{
+
+    m_Money -= summa;
+
+}
+
+
 const Korthand &Spelare::korthand()
 {
     return m_hand;
+}
+
+int Spelare::money()
+{
+    return m_Money;
 }
 
 

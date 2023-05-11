@@ -76,11 +76,12 @@ void experimentMedDynamicDownCasting()
     delete pY;
 
 }
+
 int main()
 {
     cout << "Hello World!" << endl;
     //experimentMedVirtual();
     //experimentMedDestruktor();
-    experimentMedDynamicDownCasting();
+    //experimentMedDynamicDownCasting();
     return 0;
 }
