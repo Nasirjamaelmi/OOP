@@ -33,6 +33,7 @@ void Bankir::spelaEnOmgang()
 
     if((*m_pSpelare).villSpela())
     {
+
         string question {};
         int bet =0;
         cout<<"How much you wanna bet from 1 to your maxmoney?       Money:"<<m_pSpelare->money()<<endl;
@@ -51,6 +52,7 @@ void Bankir::spelaEnOmgang()
         {
             bet += bet;
         }
+         (*m_pSpelare).forlust(bet);
 
         while ((*m_pSpelare).korthand().poang()<21 && (*m_pSpelare).villHaKort())
         {
@@ -62,14 +64,12 @@ void Bankir::spelaEnOmgang()
         if(spelarpoang > 21)
         {
             (*m_pSpelare).speletAvslutat(false);
-            (*m_pSpelare).forlust(bet);
-
-
-            if(m_pSpelare->money() == 0)
+            if(m_pSpelare->money() <= 0)
             {
 
                 m_pSpelare = nullptr;
             }
+
         }
         else if (spelarpoang == 21)
         {
@@ -96,8 +96,13 @@ void Bankir::spelaEnOmgang()
           int bankpoang = bankhand.poang();
           bool spelareVann = bankpoang > 21 || spelarpoang > bankpoang;
           (*m_pSpelare).speletAvslutat(spelareVann);
+          if(spelareVann)
+          {
+            (*m_pSpelare).vinst(bet);
+          }
 
         }
+
     }
     else m_pSpelare = nullptr;
 }
