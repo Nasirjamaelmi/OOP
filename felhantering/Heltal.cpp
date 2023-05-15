@@ -28,19 +28,19 @@ void provaHeltal()
     string tal = "";
     optional <int> Heltal = 0;
     cout<<"Skriv heltalssträngar, avsluta med ordet avsluta!"<<endl;
-    cout<<"helstalssträng:";
+    cout<<"helstalssträng: ";
     cin >> tal;
     while(tal != "avsluta" && tal != "Avsluta")
     {
         Heltal = intFranString(tal);
-        if(Heltal.has_value())
+        if(Heltal.has_value() && Heltal < INT_MAX)
         {
-            cout<<"Heltal är"<<Heltal.value()<<endl;
+            cout<<"Heltal är "<<Heltal.value()<<endl;
         }
         else
         cout<<"ogiltig int"<<endl;
 
-        cout<<"heltalsträng:";
+        cout<<"heltalsträng: ";
         cin>>tal;
     }
 }

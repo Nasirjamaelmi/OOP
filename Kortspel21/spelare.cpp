@@ -82,7 +82,7 @@ int Spelare::money()
 
 int Spelare::insats()
 {
-
+  return 0;
 }
 
 

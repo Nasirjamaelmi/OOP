@@ -9,7 +9,7 @@ Spelarebot::Spelarebot(int antalPartierAttSpela)
 
 bool Spelarebot::villSpela()
 {
-    if(m_antalPartierAttSpela == )
+    if(m_antalPartierAttSpela == m_antalSpeladeSpel)
     {
 
     }
@@ -44,7 +44,7 @@ void Spelarebot::speletAvslutat(bool spelareVann)
     m_antalSpeladeSpel++;
     if(spelareVann)
     {
-       m_totalvinst
+        m_totalvinst;
     }
 
 }

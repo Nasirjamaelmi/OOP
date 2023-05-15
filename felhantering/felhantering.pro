@@ -1,7 +1,7 @@
 TEMPLATE = app
 CONFIG += console c++17
 CONFIG -= app_bundle
-CONFIG -= qt
+INCLUDEPATH += "C:\Users\nasir\Documents\Introprogrammering\The-fallen-one\CPPINCLUDES"
 CONFIG += c++17
 SOURCES += \
         Heltal.cpp \
