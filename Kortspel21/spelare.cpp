@@ -69,9 +69,20 @@ const Korthand &Spelare::korthand()
     return m_hand;
 }
 
+void Spelare::rensaKorthand()
+{
+    m_hand.rensa();
+}
+
+
 int Spelare::money()
 {
     return m_Money;
+}
+
+int Spelare::insats()
+{
+
 }
 
 

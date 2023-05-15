@@ -15,10 +15,14 @@ public:
     virtual void vinst(int summa) = 0;
     virtual void forlust(int summa) = 0;
     virtual const Korthand& korthand() = 0;
+    virtual void rensaKorthand() =0;
     virtual int money() = 0;
+    virtual int insats() = 0;
 
 protected:
     Korthand m_hand;
+    int m_Money = 100;
+
 };
 
 

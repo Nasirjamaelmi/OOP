@@ -3,12 +3,19 @@
 
 Spelarebot::Spelarebot(int antalPartierAttSpela)
 {
+    m_antalPartierAttSpela = antalPartierAttSpela;
 
 }
 
 bool Spelarebot::villSpela()
 {
-    return false;
+    if(m_antalPartierAttSpela == )
+    {
+
+    }
+
+
+    return true;
 }
 
 bool Spelarebot::villHaKort()
@@ -34,6 +41,12 @@ void Spelarebot::kortlekenHarBlandats()
 void Spelarebot::speletAvslutat(bool spelareVann)
 {
 
+    m_antalSpeladeSpel++;
+    if(spelareVann)
+    {
+       m_totalvinst
+    }
+
 }
 
 void Spelarebot::vinst(int summa)
@@ -52,7 +65,17 @@ const Korthand &Spelarebot::korthand()
     return m_hand;
 }
 
+void Spelarebot::rensaKorthand()
+{
+    
+}
+
 int Spelarebot::money()
 {
-    return 0;
+    return m_Money;
+}
+
+int Spelarebot::insats()
+{
+
 }

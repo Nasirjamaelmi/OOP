@@ -2,10 +2,11 @@
 
 using namespace std;
 void ingangTillFodelsear();
-
+void ingangTillHeltal();
 int main()
 {
-    cout << "Hello World!" << endl;
+    //cout << "Hello World!" << endl;
 
- ingangTillFodelsear();
+ //ingangTillFodelsear();
+    ingangTillHeltal();
 }

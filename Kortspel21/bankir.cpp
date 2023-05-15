@@ -102,7 +102,7 @@ void Bankir::spelaEnOmgang()
           }
 
         }
-
+        m_pSpelare->rensaKorthand();
     }
     else m_pSpelare = nullptr;
 }

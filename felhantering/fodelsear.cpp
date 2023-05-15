@@ -86,6 +86,7 @@ void provaFodelsear()
         cin>>hitta;
     }
 }
+
 void ingangTillFodelsear()
 {
     provaHittadeFodelsear();

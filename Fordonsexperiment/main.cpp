@@ -21,11 +21,8 @@ void ingangTillTestaFordon()
 {
     Cykel cykel;
     Bil Bil;
-
     Fordon& refTillCykel = cykel;
     akEnRunda(refTillCykel);
-
-
     akEnRunda(cykel);
     akEnRunda(Bil);
 }
