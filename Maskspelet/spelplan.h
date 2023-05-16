@@ -2,6 +2,7 @@
 #define SPELPLAN_H
 
 #include <QWidget>
+#include <deque>
 
 class Spelplan : public QWidget
 {
@@ -9,8 +10,28 @@ class Spelplan : public QWidget
 public:
     explicit Spelplan(QWidget *parent = nullptr);
 
-signals:
+private slots:
+    void uppdateraMasken();
 
+    // QWidget interface
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
+
+private:
+    const int m_cellstorlek = 5;
+
+    struct RK{
+        RK(int r=0, int k=0) : m_r(r), m_k(k){}
+        int m_r;
+        int m_k;
+    };
+
+    RK m_rkRiktning;
+    RK m_rkHuvud;
+    std::deque<RK> m_masken;
 };
+
+
 
 #endif // SPELPLAN_H

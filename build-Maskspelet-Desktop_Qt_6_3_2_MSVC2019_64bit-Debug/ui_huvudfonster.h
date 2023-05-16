@@ -11,34 +11,46 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "spelplan.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Huvudfonster
 {
 public:
-    QWidget *centralwidget;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QWidget *m_pCentralwidget;
+    QGridLayout *gridLayout;
+    Spelplan *m_pSpelplan;
+    QMenuBar *m_pMenubar;
+    QStatusBar *m_pStatusbar;
 
     void setupUi(QMainWindow *Huvudfonster)
     {
         if (Huvudfonster->objectName().isEmpty())
             Huvudfonster->setObjectName(QString::fromUtf8("Huvudfonster"));
         Huvudfonster->resize(800, 600);
-        centralwidget = new QWidget(Huvudfonster);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        Huvudfonster->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(Huvudfonster);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        Huvudfonster->setMenuBar(menubar);
-        statusbar = new QStatusBar(Huvudfonster);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        Huvudfonster->setStatusBar(statusbar);
+        m_pCentralwidget = new QWidget(Huvudfonster);
+        m_pCentralwidget->setObjectName(QString::fromUtf8("m_pCentralwidget"));
+        gridLayout = new QGridLayout(m_pCentralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        m_pSpelplan = new Spelplan(m_pCentralwidget);
+        m_pSpelplan->setObjectName(QString::fromUtf8("m_pSpelplan"));
+
+        gridLayout->addWidget(m_pSpelplan, 0, 0, 1, 1);
+
+        Huvudfonster->setCentralWidget(m_pCentralwidget);
+        m_pMenubar = new QMenuBar(Huvudfonster);
+        m_pMenubar->setObjectName(QString::fromUtf8("m_pMenubar"));
+        m_pMenubar->setGeometry(QRect(0, 0, 800, 22));
+        Huvudfonster->setMenuBar(m_pMenubar);
+        m_pStatusbar = new QStatusBar(Huvudfonster);
+        m_pStatusbar->setObjectName(QString::fromUtf8("m_pStatusbar"));
+        Huvudfonster->setStatusBar(m_pStatusbar);
 
         retranslateUi(Huvudfonster);
 

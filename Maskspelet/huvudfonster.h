@@ -1,4 +1,4 @@
-§1  #ifndef HUVUDFONSTER_H
+#ifndef HUVUDFONSTER_H
 #define HUVUDFONSTER_H
 
 #include <QMainWindow>
