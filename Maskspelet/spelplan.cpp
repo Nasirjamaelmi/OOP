@@ -22,13 +22,13 @@ Spelplan::Spelplan(QWidget *parent) : QWidget{parent}
 void Spelplan::uppdateraMasken()
 {
 
+    m_masken.push_front(m_rkHuvud);
+    if(m_masken.size()>100)
+        m_masken.pop_back();
 
-     m_rkHuvud.m_r += m_rkHuvud.m_r;
-     m_rkHuvud.m_k += m_rkHuvud.m_k;
+     m_rkHuvud.m_r += m_rkRiktning.m_r;
+     m_rkHuvud.m_k += m_rkRiktning.m_k;
 
-     m_masken.push_front(m_rkHuvud);
-     if(m_masken.size()>100)
-         m_masken.pop_back();
 
     update();
 
