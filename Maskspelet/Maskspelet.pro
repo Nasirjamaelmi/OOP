@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    huvudfonster.cpp
+    huvudfonster.cpp \
+    spelplan.cpp
 
 HEADERS += \
-    huvudfonster.h
+    huvudfonster.h \
+    spelplan.h
 
 FORMS += \
     huvudfonster.ui
