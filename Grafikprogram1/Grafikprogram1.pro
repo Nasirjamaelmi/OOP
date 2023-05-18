@@ -9,13 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dokument.cpp \
+    grafikapp.cpp \
     grafikyta.cpp \
     main.cpp \
     huvudfonster.cpp
 
 HEADERS += \
+    dokument.h \
+    grafikapp.h \
     grafikyta.h \
-    huvudfonster.h
+    huvudfonster.h \
+    mushanterare.h \
+    vy.h
 
 FORMS += \
     huvudfonster.ui

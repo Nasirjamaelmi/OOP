@@ -30,6 +30,24 @@ void Spelplan::uppdateraMasken()
      m_rkHuvud.m_k += m_rkRiktning.m_k;
 
 
+     for(unsigned int i=0; i<m_masken.size(); i++)
+     {
+
+         RK rk = m_masken[i];
+         if(rk.m_r == m_rkHuvud.m_r && rk.m_k == m_rkHuvud.m_k && m_rkRiktning.m_r + m_rkRiktning.m_k != 0)
+         {
+               for(unsigned int i=0; i < m_masken.size(); i++)
+               {
+
+                   repaint();
+
+               }
+              // exit(0);
+         }
+     }
+
+
+
     update();
 
 
@@ -49,6 +67,8 @@ void Spelplan::keyPressEvent(QKeyEvent *event)
 
 void Spelplan::paintEvent(QPaintEvent *event)
 {
+
+
     QPainter painter(this);
     painter.fillRect(rect(),Qt::white);
     painter.fillRect(m_rkHuvud.m_k*m_cellstorlek,
@@ -57,13 +77,37 @@ void Spelplan::paintEvent(QPaintEvent *event)
                      m_cellstorlek,
                      Qt::black);
 
+
+
     for(unsigned int i=0; i<m_masken.size(); i++)
     {
         RK rk = m_masken[i];
-        painter.fillRect(rk.m_k*m_cellstorlek,
-                         rk.m_r*m_cellstorlek,
-                         m_cellstorlek,
-                         m_cellstorlek,
-                         Qt::black);
+        if(rk.m_r == m_rkHuvud.m_r && rk.m_k == m_rkHuvud.m_k && m_rkRiktning.m_r + m_rkRiktning.m_k != 0)
+        {
+           for(unsigned int i=0; i<m_masken.size(); i++)
+           {
+
+                painter.fillRect(m_masken[i].m_k*m_cellstorlek,
+                             m_masken[i].m_r*m_cellstorlek,
+                             m_cellstorlek,
+                             m_cellstorlek,
+                             Qt::red);
+
+
+           }
+
+            exit(0);
+        }
+        else
+        {
+            painter.fillRect(rk.m_k*m_cellstorlek,
+                           rk.m_r*m_cellstorlek,
+                           m_cellstorlek,
+                           m_cellstorlek,
+                           Qt::black);
+        }
     }
+
+
+
 }
