@@ -17,6 +17,7 @@ private slots:
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
+    void redPaintEvent(QPaintEvent *event);
 
 private:
     const int m_cellstorlek = 5;

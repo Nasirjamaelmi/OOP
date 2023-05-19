@@ -85,6 +85,8 @@ void *Grafikyta::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_Grafikyta.stringdata0))
         return static_cast<void*>(this);
+    if (!strcmp(_clname, "Vy"))
+        return static_cast< Vy*>(this);
     return QWidget::qt_metacast(_clname);
 }
 

@@ -1,6 +1,7 @@
 #ifndef HUVUDFONSTER_H
 #define HUVUDFONSTER_H
 
+#include "grafikapp.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -17,5 +18,6 @@ public:
 
 private:
     Ui::Huvudfonster *ui;
+    Grafikapp m_grafikapp;
 };
 #endif // HUVUDFONSTER_H

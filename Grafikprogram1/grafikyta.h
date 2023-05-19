@@ -24,10 +24,13 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
 
 private:
     void ritaVMFig(QPainter  &painter, const VMFig &fig);
+
 };
 
 #endif // GRAFIKYTA_H

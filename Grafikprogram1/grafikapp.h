@@ -3,6 +3,8 @@
 #include "dokument.h"
 #include "mushanterare.h"
 #include "vy.h"
+#include "cassert"
+#include "grafikyta.h"
 
 class Grafikapp : public Mushanterare
 {
@@ -24,6 +26,7 @@ public:
     void musFlytt(int x, int y) override;
 private:
     void uppdateraVyn();
+    Grafikyta *m_pGrafik = nullptr;
 };
 
 #endif // GRAFIKAPP_H
