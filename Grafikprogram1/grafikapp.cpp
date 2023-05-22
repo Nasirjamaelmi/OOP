@@ -30,7 +30,7 @@ void Grafikapp::uppdateraVyn()
 void Grafikapp::musNed(int x, int y)
 {
 
-    m_pGrafik = this;
+
 
 }
 
