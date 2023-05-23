@@ -67,8 +67,8 @@ int main()
 {
     //cout << "Hello World!" << endl;
 
- //ingangTillFodelsear();
+ ingangTillFodelsear();
     //ingangTillHeltal();
 
-    uppgiftsloop();
+    //uppgiftsloop();
 }

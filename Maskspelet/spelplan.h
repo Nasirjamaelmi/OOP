@@ -20,7 +20,8 @@ protected:
 
 
 private:
-    const int m_cellstorlek = 10;
+    const int m_cellstorlek = 1;
+    const int m_tjocklek = 10;
 
     struct RK{
         RK(int r=0, int k=0) : m_r(r), m_k(k){}

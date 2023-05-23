@@ -30,17 +30,22 @@ void Grafikapp::uppdateraVyn()
 void Grafikapp::musNed(int x, int y)
 {
 
-
+    m_pKlickadFigur = m_dokument.pFigurFranPunkt(x,y);
 
 }
 
 void Grafikapp::musUpp(int x, int y)
 {
-
+   m_pKlickadFigur = nullptr;
 }
 
 void Grafikapp::musFlytt(int x, int y)
 {
-
+   if(m_pKlickadFigur != nullptr)
+   {
+       m_pKlickadFigur->m_left=x;
+       m_pKlickadFigur->m_top=y;
+       uppdateraVyn();
+   }
 }
 

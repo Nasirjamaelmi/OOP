@@ -27,6 +27,7 @@ public:
 private:
     void uppdateraVyn();
     Grafikyta *m_pGrafik = nullptr;
+    Figur* m_pKlickadFigur = nullptr;
 };
 
 #endif // GRAFIKAPP_H

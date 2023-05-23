@@ -34,11 +34,11 @@ void provaTransorm2()
     vector<int> vec2(vec1.size());
     vector<int> vec3;
 
-    /*skrivHorisontellt("originalvektorn:",vec1);
+    skrivHorisontellt("originalvektorn:",vec1);
     auto multiTre = [](int i) {return i*3;};
     transform(begin(vec1),end(vec1),begin(vec2), multiTre);
     skrivHorisontellt("efter transform:", vec2);
-*/
+
     skrivHorisontellt("originalvektorn:",vec1);
     auto ite3 = back_inserter(vec3);
     auto multiFem = [] (int i) { return i*5;};

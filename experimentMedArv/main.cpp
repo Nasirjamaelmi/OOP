@@ -80,7 +80,7 @@ void experimentMedDynamicDownCasting()
 int main()
 {
     cout << "Hello World!" << endl;
-    //experimentMedVirtual();
+    experimentMedVirtual();
     //experimentMedDestruktor();
     //experimentMedDynamicDownCasting();
     return 0;

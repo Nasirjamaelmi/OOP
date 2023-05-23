@@ -13,7 +13,7 @@ Spelplan::Spelplan(QWidget *parent) : QWidget{parent}
 {
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Spelplan::uppdateraMasken);
-    timer->start(60);
+    timer->start(20);
 
     setFocus();
     m_rkHuvud = RK(50,50);
@@ -99,7 +99,7 @@ void Spelplan::uppdateraMasken()
 
 
     m_masken.push_front(m_rkHuvud);           ///stoppar in huvudet och tar bort ett om masken är större än 100
-    if(m_masken.size())
+    if(m_masken.size() > 100)
         m_masken.pop_back();
     update();
 }
@@ -108,10 +108,10 @@ void Spelplan::keyPressEvent(QKeyEvent *event)
 {
     int k = event->key();
 
-    if(k==Qt::Key_Down) m_rkRiktning = RK(1,0);
-    if(k==Qt::Key_Up) m_rkRiktning = RK(-1,0);
-    if(k==Qt::Key_Left) m_rkRiktning = RK(0,-1);
-    if(k==Qt::Key_Right) m_rkRiktning = RK(0,1);
+    if(k==Qt::Key_Down) m_rkRiktning = RK(5,0);
+    if(k==Qt::Key_Up) m_rkRiktning = RK(-5,0);
+    if(k==Qt::Key_Left) m_rkRiktning = RK(0,-5);
+    if(k==Qt::Key_Right) m_rkRiktning = RK(0,5);
 
 
 }
@@ -124,8 +124,8 @@ void Spelplan::paintEvent(QPaintEvent *event)
     painter.fillRect(rect(),Qt::white);
     painter.fillRect(m_rkHuvud.m_k*m_cellstorlek,
                      m_rkHuvud.m_r*m_cellstorlek,
-                     m_cellstorlek,
-                     m_cellstorlek,
+                      m_tjocklek,
+                      m_tjocklek,
                      Qt::blue);
 
     if(!m_eaten)
@@ -134,7 +134,7 @@ void Spelplan::paintEvent(QPaintEvent *event)
                      m_mat.m_r*m_cellstorlek,
                      m_cellstorlek,
                      m_cellstorlek,
-                     Qt::red);
+                     Qt::green);
     }
 
 
@@ -165,8 +165,8 @@ void Spelplan::paintEvent(QPaintEvent *event)
             RK rk = m_masken[i];
             painter.fillRect(rk.m_k*m_cellstorlek,
                              rk.m_r*m_cellstorlek,
-                             m_cellstorlek,
-                             m_cellstorlek,
+                              m_tjocklek,
+                              m_tjocklek,
                              Qt::blue);
         }
 

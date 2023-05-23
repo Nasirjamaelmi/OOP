@@ -1,16 +1,18 @@
 #include <iostream>
 #include <string>
 #include <optional>
+#include <vector>
 using namespace std;
 
 
-const string nameList []  = {"Newton","Euklides"};
+vector <string> nameList  = {"Newton","Euklides"};
 
 
 bool hittadeFodelsearFranNamn(const string namn, int *pFodelsear)
 {
     int year [] = {1642,-325,0};
-    for(int i=0; i<nameList->size(); i++)
+    cout<<nameList.size()<<endl;
+    for(int i=0; i<nameList.size(); i++)
     {
         if(namn == nameList[i])
         {
